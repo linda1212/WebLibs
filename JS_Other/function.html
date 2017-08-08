@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+    // 函数声明会被前置
+	function foo()
+	{
+		console.log("this is a function");
+	}
+
+	// 匿名函数表达式 函数本身不会被前置
+	var add = function(){console.log("add functionddd");}();
+	// add();
+
+	// 匿名函数表达式
+	(function(){
+		'user strict'
+		//do something
+	})();
+
+	// 命名函数表达式 ie6-8有bug，ie9报错
+	var add = function foo(a,b){};
+
+
+	function modulus()
+	{
+		return Math.sqrt(this.re*this.re + this.im*this.im);
+	}
+
+	var o = {
+		re:1,
+		im:1,
+		get phase(){return Math.atan2(thsi.im,this.re)},
+		Object.defineProperty(o,"modulus",{get:modulus, });
+	};
+</script>
+<body>
+	
+</body>
+</html>

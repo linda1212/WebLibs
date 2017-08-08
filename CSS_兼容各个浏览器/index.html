@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兼容各个浏览器</title>
+	<style>
+		*{margin:0;padding:0;}
+		html,body{
+			font-family:"Microsoft YaHei";
+			font-size:14px;
+			line-height: 1.5em;
+		}
+		.mainBox{
+			margin:0 auto;
+			width:80%;
+			border:1px solid green;
+		}
+		.childBox{
+			width: 200px;
+			height: 200px;
+			border:20px solid red;
+			border:20px solid yellow\9;/* IE8,IE9 */
+			*border:20px solid green;/* IE7 */
+			_border:20px solid blue;/* IE6 */
+			/* box-sizing:border-box; */
+			margin-top:20px;
+		}
+		p{color:red;} /*权值为1*/
+		p span{color:green;} /*权值为1+1=2*/
+		.warning{color:white;} /*权值为10*/
+		p span.warning{color:purple;} /*权值为1+1+10=12*/
+		#footer .note p{color:yellow;} /*权值为100+10+1=111*/
+		
+	</style>
+</head>
+<body>
+	<div class="mainBox">
+		<div class="childBox">
+			this is childBox,width:200px height:300px
+		</div>
+		<div class="childBox">
+			this is childBox,width:200px height:300px
+		</div>
+	</div>
+</body>
+</html>

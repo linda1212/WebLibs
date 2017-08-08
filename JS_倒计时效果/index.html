@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+	    var send=document.getElementById('send'),
+	        times=10,
+	        timer=null;
+	    send.onclick=function(){
+            
+            var tempttimes = times;
+            var endtime = new Date().getTime() + tempttimes*1000;
+           
+            var tips = document.getElementById("tips");
+            tips.style.display = "block";
+            tips.setAttribute("disabled","disabled");
+            
+            timer = setInterval(function(){
+                
+                var dis = getDisTimes(endtime);
+                console.log(dis);
+
+                if(dis>0)
+                {
+                    tips.setAttribute("value",parseInt(dis)+"秒后重试");
+                }
+                else
+                {
+                    tips.style.display = "none";
+                    tempttimes = times;
+                    tips.setAttribute("value",tempttimes+"秒后重试");
+
+                     if(timer)
+                    {
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                }          
+             },1000);
+	    } 
+	}
+    
+    function getDisTimes(endTime){
+        var now = new Date();
+        return (endTime - now.getTime())/1000;
+    }
+	</script>
+</head>
+<body>
+	<input type="button" id="send" value="发送验证码">
+    <input type="button" id="tips" value="发送验证码">
+</body>
+</html>

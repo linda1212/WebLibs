@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$(function(){
+			console.log("document loaded");
+			$(".mainBox").load("http://localhost/JSLoad/data.html",function(data){
+				console.log("load data complete");
+			},function(){alert("error");});
+		});
+	</script>
+</head>
+<body>
+	<div class="mainBox">
+		
+	</div>
+</body>
+</html>

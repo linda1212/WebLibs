@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#mainbox
+		{
+			width: 100%;
+			height:600px;
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div id="mainbox">
+		click me
+	</div>
+</body>
+<script src="js/event.js"></script>
+	<script>
+		var box = document.getElementById("mainbox");
+		eventUtil.addHandler(box,'click',function(){
+			alert("click me");
+		});
+	</script>
+</html>

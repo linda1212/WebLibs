@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+(function(){
+		//原型链继承
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.hi = function(){
+			console.log("hello,my name is " + this.name + "and my age is " + this.age);
+		}
+		Person.prototype.LEGS_NUM = 2;
+		Person.prototype.ARMS_NUM = 2;
+		Person.prototype.walk = function()
+		{
+			console.log(this.name + " is walking");
+		}
+
+		function Student(name,age,className)
+		{
+			Person.call(this,name,age);
+			this.className = className;
+		}
+
+		// ES5之前
+		if(!Object.create)
+		{
+			Object.create = function(proto)
+			{
+				function F(){
+					F.prototype = proto;
+					return new F;
+				}
+			}
+		}
+		
+		//ES5之后出现的
+		Student.prototype = Object.create(Person.prototype);
+		Student.constructor = Student;
+		Student.prototype.hi = function()
+		{
+			console.log("Hi,my name is " + this.name +  " i am " + this.age + "years old and from" + this.className);
+		}
+		Student.prototype.learn = function()
+		{
+			console.log(this.name + " is learning");
+		}
+
+		var per1  = new Person("tom",23);
+		console.log( per1);
+		per1.hi();
+		console.log(per1.LEGS_NUM);
+		console.log(per1.ARMS_NUM);
+		per1.walk();
+		var s = new Student("hellen",12,2);
+		console.log(s);
+		s.hi();
+		console.log(s.LEGS_NUM);
+		console.log(s.ARMS_NUM);
+		s.walk();
+		s.learn();
+})();
+</script>
+<body>
+	
+</body>
+</html>

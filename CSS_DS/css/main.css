@@ -1,0 +1,171 @@
+html,body{color: #666;
+    font-size: 12px;
+    font-family: "Microsoft Yahei" 微软雅黑, 宋体, Geneva, sans-serif;
+    line-height: 1.5em;
+}
+
+/*公用的部分*/
+.comWidth{width:1000px;margin:0 auto;}
+.fl{float:left;display:inline\9;}
+.fr{float:right;/*display:inline-block\9;*/}
+.green{background:#cfc;}
+.red{background:#fcc;}
+.blue{background:#ccf;}
+.boxsizing{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+
+/*顶部灰色收藏栏*/
+.navTopBox{color:#666;background:#f7f7f7;height:31px;line-height:31px;}
+.navTopBox a{color:#666;}
+.navTopBox a:hover{color:#f00;}
+.leftArea a{font-weight: bold;padding-left:15px;}
+.leftArea{background:url(../images/star.png) no-repeat left center;}
+
+
+/*顶部logo搜索栏*/
+.searchBox{height:85px;background:#1d7bd8;}
+.mainSearch img{margin-left:40px;margin-top:13px;}
+.inputBox{width:430px;height:35px;float:left;margin-top:23px;display:inline\9;margin-left:185px;}
+.search_input{width:350px;line-height:35px;padding:0 5px;height:35px;}
+.search_btn{ font-weight: bold; color:#fff;width:70px;height:35px;background:#fe8c00;float:left;}
+.shopcart_box{
+	width:146px;
+	height:35px;
+	/*float:left;
+	display:inline\9;*/
+	/*border:1px solid red;*/
+	margin-top:23px;
+	margin-left:31px;
+}
+.shopcart{
+	width:88px;
+	height:35px;
+	background:#fe8c00 url(../images/shopcart.png) no-repeat 10px 8px;
+	border-right:1px solid #e17b00;
+	display:inline-block\9;
+}
+.shopCount{
+	width:56px;
+	height:35px;
+	background:#fe8c00;
+	/*background:#fe8c00 url(../images/shopcart.png) no-repeat -10px -12px;*/
+	border-left:1px solid #fe9d01;
+}
+.shopcart a,.shopCount a{text-indent: 14px; color:#fff;font-size:14px;line-height:35px;}
+.shopcart a{margin-left:40px;_ margin-left:24px\9;display:inline;float;left}
+.shopCount a{margin-left:20px;_ margin-left:10px\9;display:inline;float;left}
+
+
+/*顶部导航栏*/
+.navBox{height:35px;background:#126abf;}
+.classTitle{font-size:16px;color:#fff;text-align: center;line-height:35px;width:189px;}
+
+.navul li a{display:block;color:#fff;width:100px;text-align: center}
+.navul li{float:left;display:inline\9;display:block;
+	width:100px;
+	height:35px;
+	color:#fff;
+	line-height:35px;
+	font-size: 14px;
+	cursor:pointer;
+}
+
+.navul li:hover,.navul .active{background:#4495fe;}
+
+/*左侧主菜单*/
+.mainMenu{
+	position:absolute;
+
+	width:189px;
+	/*border:1px solid red;*/
+	background:#4495fc;
+	background:red;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	position:relative;
+}
+.menuItem{
+	padding:15px 13px 24px 11px;
+	box-sizing:border-box;
+	border-top:1px solid #59a2fc;
+	border-bottom:1px solid #3488f3; 
+	cursor:pointer;
+}
+.menuItem a{color:#fff;}
+.menuItem a:hover{color:red;}
+.menuItem:hover a{color:#000;}
+.menuItem:hover a:hover{color:red;}
+.menuItem:hover span a:hover{color:#00f;}
+.menuItem .subMenu dl dt a,.menuItem:hover .subMenu dl dt a{color:#4a8bdc;font-weight: bold;line-height: 24px;}
+.menuItem .subMenu dd a,.menuItem:hover .subMenu dd a{color:#666;line-height: 24px}
+.menuItem .subMenu dd a:hover,.menuItem:hover .subMenu dd a:hover{color:#f00;}
+.menuTitle{font-size:14px;line-height: 28px;}
+.menuItem:hover span a{color:#fff;}
+.menuItem span a{
+	background:#106bc1;
+	display:inline-block;
+	height:18px;
+	line-height:18px;
+	padding:1px 8px 3px 8px;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-o-border-radius: 16px;
+	-ms-border-radius: 16px;
+}
+.menuItem:hover{
+	background:#fff;
+	border:1px solid #4495fc;
+	border-right:none;
+	color:#000;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+.menuContent{line-height:24px;}
+/*.subMemu,.subMenu dt,.subMenu dd{float:left;display:inline;}*/
+.subMenu{
+	display:none;
+	position:absolute;
+	left:189px;top:0px;
+	width:600px;
+	height:auto;
+	border:1px solid #ddd;
+	/*border:1px solid blue;*/
+	overflow: hidden;
+}
+.subMenu a{color:#666;}
+.subMenu dl{display:inline-block;width:530px;height:auto;border-bottom:1px solid #ccc;
+	padding:10px 28px 8px 20px;}
+.subMenu dl dt,.subMenu dl dd{display:block;float:left;_ display:inline\9;}
+.subMenu dl dt{width:64px;height:34px;line-height: 24px;}
+.subMenu dl dd{width:439px;line-height:22px;}
+.subMenu dl dd a{display:line-block;padding-left:8px;padding-right:8px;}
+.subMenu div{width:100%;display: block;}
+.subMenu button{height:26px;display:inline-block;
+color:white;background:#2686e5;}
+.subMenu .lastdl{border:none;padding-bottom:12px;}
+
+.menuItem:hover .subMenu{display: block;}
+
+.index_main_content
+{
+	width:900px;
+	height:600px;
+	background: red;
+}
+
+.comWidth
+{
+	position:absolute;
+}

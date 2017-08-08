@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<title>强大的支持手机端响应式的jQuery焦点图轮播特效插件bxslider.js</title>
+<link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+<style>
+    p {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        color: #333;
+        line-height: 40px;
+        text-align: center;
+        font-family:"微软雅黑"}
+</style>
+</head>
+
+<body>
+    
+ 	<!-- ---------------------------------slider6--------------------------------------------- -->
+    <p>slider6(Image)</p>
+    <div class="p_index_slider">
+        <div class="slide"><img src="images/pip_slider_01.png"></div>
+        <div class="slide"><img src="images/pip_slider_02.png"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.p_index_slider').bxSlider({
+                mode: 'fade',
+                slideWidth: 642,
+                adaptiveHeight: true,
+                slideMargin: 10,
+                auto: true,
+                buildPager: 'custom',
+                infiniteLoop: false,
+                hideControlOnEnd: true
+            });
+        });
+
+    </script>
+    
+   
+    
+
+    
+   
+    
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.main .main_i .slider{
+	width: 100%;
+	height: 400px;
+	position:relative;
+	border:1px solid red;
+}
+.main_i{}
+.main_i .caption{position:absolute;}

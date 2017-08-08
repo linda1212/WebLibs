@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>网页中的事件流</title>
+	
+</head>
+<body>
+	<div id="mainBox">
+		<form action="#" id="mainForm">
+			<input id="btn" type="button" value="按钮">
+		</form>
+	</div>
+</body>
+<script>
+		var mainbox = document.getElementById('mainBox');
+		var mainform = document.getElementById('mainForm');
+		var btn = document.getElementById('btn');
+
+		mainbox.addEventListener("click", function(){
+			alert("click mainbox");
+		});
+		mainform.addEventListener("click", function(){
+			alert("click mainform");
+		});
+		btn.addEventListener("click",function(){
+			alert("click btn");
+		});
+
+	</script>
+</html>

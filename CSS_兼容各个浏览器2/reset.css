@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*是的低版本的ie兼容h5的标签*/
+header,footer,article,aside,section,nav,menu,hgroup,details,dialog,figure,figcaption{display:block;border:1px solid red;}

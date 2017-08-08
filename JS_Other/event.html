@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>网页中的事件流</title>
+	
+</head>
+<body>
+	<div id="mainBox">
+		<form action="#" id="mainForm">
+			<input id="btn" type="button" value="按钮">
+		</form>
+	</div>
+</body>
+<script>
+	(function(){
+		var EventUtil = {
+			addListener:function(target,type,handler)
+			{
+				if(target.addEventListener)
+				{
+					target.addEventListener(type,handler,false);
+				}else if(target.attachEvent){
+					target.attachEvent("on"+type,handler)
+				}else{
+					target['on'+type] = handler;
+				}
+			},
+			removeListener:function(target,type,handler)
+			{
+				if(target.removeEventListener)
+				{
+					target.removeEventListener(type,handler,false);
+				}else if(target.detachEvent){
+					target.detachEvent("on"+type,handler)
+				}else{
+					target['on'+type] = null;
+				}
+			},
+			getEvent:function(e)
+			{
+				return e?e:window.event;
+			},
+			getTarget:function(e){
+				return e.target?e.target:e.srcElement;
+			},
+			preventDefault:function(e){
+				if(e.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				}
+			},
+			stopPropagation:function(e){
+				if(e.stopPropagation){
+					e.stopPropagation();
+				}else{
+					e.cancelBubble = true;
+				}
+			}
+		};
+
+		EventUtil.addListener(document,'load', function(){
+			alert('fdsfds');
+		});
+
+		var mainbox = document.getElementById('mainBox');
+		var mainform = document.getElementById('mainForm');
+		var btn = document.getElementById('btn');
+
+		EventUtil.addListener(btn,'click',function(){
+			alert(this + "click");
+		});
+	})();
+		
+
+		/*mainbox.addEventListener("click", function(){
+			alert("click mainbox");
+		});
+		mainform.addEventListener("click", function(){
+			alert("click mainform");
+		},true);
+		mainform.addEventListener("click", function(){
+			alert("click mainform");
+		},false);
+		btn.addEventListener("click",function(){
+			alert("click btn");
+		});*/
+
+	</script>
+</html>
