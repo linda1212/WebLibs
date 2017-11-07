@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="title"></div>
+</body>
+<!--<script src="dist/sea-debug.js"></script>-->
+<script src="http://yslove.net/actjs/assets/sea-modules/seajs/2.1.1/sj.js"></script>
+<script>
+
+    seajs.config({
+        //base: '',
+        debug: true,//值为true时，加载器不会删除动态插入的 script 标签。插件也可以根据debug配置，来决策 log 等信息的输出。
+        //该配置可对模块路径进行映射修改，可用于路径转换、在线调试等。
+        /*define(function(require, exports, module) {
+         var a = require('./a');
+         //=> 加载的是 path/to/a-debug.js
+         });*/
+        /*map: [
+         ['.js', '-debug.js']
+         ],*/
+        //变量配置。有些场景下，模块路径在运行时才能确定，这时可以使用 vars 变量来配置。
+        //vars 配置的是模块标识中的变量值，在模块标识中用 {key} 来表示变量。
+        /*define(function(require, exports, module) {
+         var lang = require('./i18n/{locale}.js');
+         //=> 加载的是 path/to/i18n/zh-cn.js
+         });*/
+        //vars: {'locale': 'zh-cn'},
+        //设置路径，方便跨目录调用。通过灵活的设置path可以在不影响base的情况下指定到某个目录。
+        //paths: {'gallery': 'https://a.alipayobjects.com/gallery/underscore.js'},
+        //别名配置，配置之后可在模块中使用require调用 require('jquery');
+        alias: {
+            'jquery': 'http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js',
+            'desktop':'./desktop.js',
+            'main':'./js/main.js'
+        }
+    });
+
+    seajs.use('main');
+
+//    seajs.use('main');
+
+    var temp = seajs.data;
+
+</script>
+</html>
